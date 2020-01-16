@@ -15,6 +15,10 @@ server.listen(port, () => {
 // global middleware 
 server.use(express.json());   //??  do I need this?? -YES
 
+// extra stuff
+
+server.use(cors())
+
 server.get('/', (req, res) => {
     res.send('hello from express!');
 }); 
@@ -100,8 +104,9 @@ server.delete('/api/users/:id', (req, res) => {
             }
         })
         .catch(err => {
-            res.status(500).json({ success: false, 
-                message: 'The user could not be removed', err});
+            // res.status(500).json({ success: false, 
+            //     message: 'The user could not be removed', err});
+            event.easier.res.redirect('https://http.cat/500'); 
         });
 }); 
 
