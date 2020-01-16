@@ -17,7 +17,7 @@ server.use(express.json());   //??  do I need this?? -YES
 
 // extra stuff
 
-server.use(cors())
+server.use(cors()); 
 
 server.get('/', (req, res) => {
     res.send('hello from express!');
